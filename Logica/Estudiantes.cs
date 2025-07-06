@@ -7,7 +7,7 @@ using Logica.Library;
 
 namespace Logica
 {
-    public class Estudiantes : Librarys
+    public class Estudiantes : Librarys // Clase que hereda de Librarys para usar sus métodos y propiedades
     {
           
     }
