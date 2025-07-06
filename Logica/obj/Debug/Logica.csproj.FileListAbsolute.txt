@@ -1,0 +1,6 @@
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\Logica.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\Logica.pdb
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.pdb
