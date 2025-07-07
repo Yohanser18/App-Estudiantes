@@ -13,7 +13,7 @@ namespace App_Estudiantes
 {
     public partial class Form1 : Form
     {
-        private Estudiantes estudiantes = new Estudiantes(); // Instancia de la clase Estudiantes para usar sus métodos y propiedades
+        private Estudiantes estudiantes; // Instancia de la clase Estudiantes para usar sus métodos y propiedades
 
         public Form1()
         {
@@ -24,6 +24,8 @@ namespace App_Estudiantes
             ListaCampos.Add(txtNombre); // Agrega el TextBox txtNombre a la lista
             ListaCampos.Add(txtApellidos); // Agrega el TextBox txtApellidos a la lista
             ListaCampos.Add(txtEmail); // Agrega el TextBox txtEmail a la lista
+
+             estudiantes = new Estudiantes(ListaCampos);//Aqui vamos utilizando los campos del formulario para integralor a la clase estudientes para utilizarlo aqui esta es la logica//
         }
 
         private void pictureImagen_Click(object sender, EventArgs e) // Este es el evento para cargar la imagen//
