@@ -18,6 +18,12 @@ namespace App_Estudiantes
         public Form1()
         {
             InitializeComponent();
+
+            var ListaCampos = new List<TextBox>(); // Lista de controles que se utilizarán para validar los campos del formulario
+            ListaCampos.Add(txtNiD); // Agrega el TextBox txtNiD a la lista
+            ListaCampos.Add(txtNombre); // Agrega el TextBox txtNombre a la lista
+            ListaCampos.Add(txtApellidos); // Agrega el TextBox txtApellidos a la lista
+            ListaCampos.Add(txtEmail); // Agrega el TextBox txtEmail a la lista
         }
 
         private void pictureImagen_Click(object sender, EventArgs e) // Este es el evento para cargar la imagen//
@@ -42,6 +48,7 @@ namespace App_Estudiantes
         private void txtNiD_KeyPress(object sender, KeyPressEventArgs e)// Este es el evento para el TextBox txtNiD, que se activa cuando se presiona una tecla
         {
             // Aquí puedes agregar lógica para validar la entrada del usuario si es necesario
+            estudiantes.textBoxEvent.numberkeyPress(e); // Llama al método numberkeyPress de la clase TextBoxEvent para validar la entrada del usuario
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)// Este es el evento para el TextBox txtNombre, que se activa cuando el texto cambia
