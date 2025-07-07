@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.ComponentModel.DataAnnotations; // Para usar EmailAddressAttribute
+
 namespace Logica.Library
 {
     public class TextBoxEvent
@@ -31,6 +33,11 @@ namespace Logica.Library
             else if (char.IsSeparator(ex.KeyChar)) { ex.Handled = false; } // Condicion que nos permite utilizar la tecla de espacio//
             else { ex.Handled = true; } // Si no se cumple ninguna de las condiciones anteriores, se bloquea la tecla presionada//
         }
+
+        public bool ComprobarFormatoEmail(string email) 
+        { 
+           return new EmailAddressAttribute().Equals(email);
+        } // Utiliza EmailAddressAttribute para validar el formato del email
 
     }
 }

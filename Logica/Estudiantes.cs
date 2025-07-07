@@ -52,6 +52,19 @@ namespace Logica
                             listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el campo Email está vacío
                             textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
                         }
+                        else
+                        {
+                            if (textBoxEvent.ComprobarFormatoEmail(listaLabel[3].Text))
+                            {
+
+                            }
+                            else 
+                            {
+                                listaLabel[3].Text = "Email no valido"; // Mensaje que se mostrara si el campo Email no es valido
+                                listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el campo Email no es válido
+                                textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
+                            }
+                        }
                     }
                 }
             }
