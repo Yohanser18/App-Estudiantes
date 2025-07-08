@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Logica.Library
             {
                 pictureBox.ImageLocation = fd.FileName;// asigna la ruta de la imagen al PictureBox
             }
+        }
+        public byte[] Imagenbytes(Image img) //Aqui estaemos utilizado este metodo para poder convertir la imagen a un arreglo de bytes para poder guardarla en una base de datos o en un archivo//
+        { 
+            var convertir = new ImageConverter();// Creamos una instancia de la clase ImageConverter
+            return (byte[])convertir.ConvertTo(img, typeof(byte[])); // Convertimos la imagen a un arreglo de bytes y lo retornamos
         }
     }
 }

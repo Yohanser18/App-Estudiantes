@@ -25,12 +25,14 @@ namespace App_Estudiantes
             ListaCampos.Add(txtApellidos); // Agrega el TextBox txtApellidos a la lista
             ListaCampos.Add(txtEmail); // Agrega el TextBox txtEmail a la lista
 
-           var  listaLabel = new List<Label>();// Aqui vamos crear una colleccion de label //
-           listaLabel.Add(labelNiD);// Agrega el Label labelNiD a la lista
+            var listaLabel = new List<Label>();// Aqui vamos crear una colleccion de label //
+            listaLabel.Add(labelNiD);// Agrega el Label labelNiD a la lista
             listaLabel.Add(labelNombre);// Agrega el Label labelNombre a la lista
             listaLabel.Add(labelApellido);// Agrega el Label labelApellido a la lista
             listaLabel.Add(labelEmail);// Agrega el Label labelEmail a la lista
-            estudiantes = new Estudiantes(ListaCampos, listaLabel);//Aqui vamos utilizando los campos del formulario para integralor a la clase estudientes para utilizarlo aqui esta es la logica//
+
+            Object[] objects = { pictureImagen }; // Inicializa un arreglo de objetos vacío, aunque no se utiliza en este contexto
+            estudiantes = new Estudiantes(ListaCampos, listaLabel, objects);//Aqui vamos utilizando los campos del formulario para integralor a la clase estudientes para utilizarlo aqui esta es la logica//
         }
 
         private void pictureImagen_Click(object sender, EventArgs e) // Este es el evento para cargar la imagen//

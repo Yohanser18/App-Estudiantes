@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using System.ComponentModel.DataAnnotations; // Para usar EmailAddressAttribute
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices; // Para usar EmailAddressAttribute
 
 namespace Logica.Library
 {
@@ -34,10 +35,10 @@ namespace Logica.Library
             else { ex.Handled = true; } // Si no se cumple ninguna de las condiciones anteriores, se bloquea la tecla presionada//
         }
 
-        public bool ComprobarFormatoEmail(string email) 
+        /*public bool ComprobarFormatoEmail(string email) // Aqui vamas comentar esta funcion porque no la vamos a utilizar por el momento//
         { 
            return new EmailAddressAttribute().Equals(email);
-        } // Utiliza EmailAddressAttribute para validar el formato del email
-
+            // Utiliza EmailAddressAttribute para validar el formato del email
+        }*/
     }
 }

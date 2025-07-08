@@ -265,9 +265,11 @@
             // 
             // pictureImagen
             // 
+            this.pictureImagen.Image = global::App_Estudiantes.Properties.Resources.images;
             this.pictureImagen.Location = new System.Drawing.Point(16, 19);
             this.pictureImagen.Name = "pictureImagen";
             this.pictureImagen.Size = new System.Drawing.Size(150, 79);
+            this.pictureImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureImagen.TabIndex = 0;
             this.pictureImagen.TabStop = false;
             this.pictureImagen.Click += new System.EventHandler(this.pictureImagen_Click);

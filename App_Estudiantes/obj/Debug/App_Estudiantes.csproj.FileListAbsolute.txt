@@ -1,6 +1,4 @@
-C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\App_Estudiantes.exe.config
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\App_Estudiantes.exe
-C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\App_Estudiantes.pdb
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\Logica.dll
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\Logica.pdb
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Estudiantes.csproj.AssemblyReference.cache
@@ -8,6 +6,8 @@ C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Es
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Estudiantes.Properties.Resources.resources
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Estudiantes.csproj.GenerateResource.cache
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Estudiantes.csproj.CoreCompileInputs.cache
-C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Estu.2FB2216C.Up2Date
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Estudiantes.exe
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Estudiantes.pdb
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\App_Estudiantes.exe.config
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\App_Estudiantes.pdb
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Estu.2FB2216C.Up2Date

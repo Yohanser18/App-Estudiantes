@@ -14,10 +14,12 @@ namespace Logica
     {
         private List<TextBox> textBoxes; // Lista de TextBox que se utilizarán para validar los campos del formulario
         private List<Label> listaLabel; // Lista de Label que se utilizarán para mostrar mensajes de validación
-        public Estudiantes(List<TextBox> textBoxes, List<Label> listaLabel) // Constructor que recibe una lista de TextBox
+        private PictureBox image; // PictureBox para mostrar la imagen del estudiante
+        public Estudiantes(List<TextBox> textBoxes, List<Label> listaLabel, object[] objects) // Constructor que recibe una lista de TextBox
         {
             this.textBoxes = textBoxes; // Asigna la lista de TextBox a la propiedad de la clase
             this.listaLabel = listaLabel; // Asigna la lista de Label a la propiedad de la clase
+            image = (PictureBox)objects[0]; // Asigna el PictureBox del arreglo de objetos a la propiedad de la clase
         }
 
         public void Registro() // Método para validar los campos del formulario antes de registrar un estudiante
@@ -54,16 +56,19 @@ namespace Logica
                         }
                         else
                         {
-                            if (textBoxEvent.ComprobarFormatoEmail(listaLabel[3].Text))
-                            {
-
-                            }
-                            else 
-                            {
-                                listaLabel[3].Text = "Email no valido"; // Mensaje que se mostrara si el campo Email no es valido
-                                listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el campo Email no es válido
-                                textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
-                            }
+                            /* if (textBoxEvent.ComprobarFormatoEmail(textBoxes[3].Text)) // Aquí estamos verificando si el campo Email es válido utilizando un método de la clase TextBoxEvent
+                             {
+                                 listaLabel[3].Text = "Email valido"; // Mensaje que se mostrara si el campo Email es valido
+                                 listaLabel[3].ForeColor = Color.Green; // Cambia el color del texto del Label a verde si el campo Email es válido
+                                 // Aquí puedes agregar la lógica para registrar al estudiante, como guardar los datos en una base de datos o en un archivo
+                             }
+                             else 
+                             {
+                                 listaLabel[3].Text = "Email no valido"; // Mensaje que se mostrara si el campo Email no es valido
+                                 listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el campo Email no es válido
+                                 textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
+                             }*/
+                           var imageArrays = uplodimagen.Imagenbytes(image.Image); // Converte la imagen del picturebox a un arreglo de bytes utilizando el método Imagenbytes de la clase Uplodimagen
                         }
                     }
                 }
