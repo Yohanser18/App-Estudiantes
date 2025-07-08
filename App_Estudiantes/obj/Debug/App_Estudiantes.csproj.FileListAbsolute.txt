@@ -11,3 +11,13 @@ C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Es
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\App_Estudiantes.exe.config
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\App_Estudiantes.pdb
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\obj\Debug\App_Estu.2FB2216C.Up2Date
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\Datos.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\linq2db.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\Datos.pdb
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\linq2db.xml
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\App_Estudiantes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

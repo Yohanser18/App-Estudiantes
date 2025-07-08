@@ -37,7 +37,7 @@ namespace Logica.Library
 
         /*public bool ComprobarFormatoEmail(string email) // Aqui vamas comentar esta funcion porque no la vamos a utilizar por el momento//
         { 
-           return new EmailAddressAttribute().Equals(email);
+           return new EmailAddressAttribute().IsValid(email);
             // Utiliza EmailAddressAttribute para validar el formato del email
         }*/
     }

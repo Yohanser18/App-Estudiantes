@@ -1,0 +1,15 @@
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\Datos.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\Datos.pdb
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\linq2db.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\linq2db.xml
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\obj\Debug\Data.csproj.AssemblyReference.cache
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\obj\Debug\Data.csproj.Up2Date
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\obj\Debug\Datos.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Datos\obj\Debug\Datos.pdb

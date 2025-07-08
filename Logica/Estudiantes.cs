@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Data;
+using Datos;
+using LinqToDB;
 using Logica.Library;
 
 namespace Logica
@@ -12,14 +15,17 @@ namespace Logica
     //Aqui estamos utilizando los campos del formulario para integralor a la clase estudientes para utilizarlo aqui esta es la logica//
     public class Estudiantes : Librarys // Clase que hereda de Librarys para usar sus métodos y propiedades
     {
+        Conexion db = new Conexion(); // Instancia de la clase Conexion para interactuar con la base de datos
         private List<TextBox> textBoxes; // Lista de TextBox que se utilizarán para validar los campos del formulario
         private List<Label> listaLabel; // Lista de Label que se utilizarán para mostrar mensajes de validación
         private PictureBox image; // PictureBox para mostrar la imagen del estudiante
+       // private Librarys librarys;// Instancia de la clase Librarys para usar sus métodos y propiedades
         public Estudiantes(List<TextBox> textBoxes, List<Label> listaLabel, object[] objects) // Constructor que recibe una lista de TextBox
         {
             this.textBoxes = textBoxes; // Asigna la lista de TextBox a la propiedad de la clase
             this.listaLabel = listaLabel; // Asigna la lista de Label a la propiedad de la clase
             image = (PictureBox)objects[0]; // Asigna el PictureBox del arreglo de objetos a la propiedad de la clase
+            //librarys = new Librarys(); // Inicializa la instancia de la clase Librarys
         }
 
         public void Registro() // Método para validar los campos del formulario antes de registrar un estudiante
@@ -68,7 +74,13 @@ namespace Logica
                                  listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el campo Email no es válido
                                  textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
                              }*/
-                           var imageArrays = uplodimagen.Imagenbytes(image.Image); // Converte la imagen del picturebox a un arreglo de bytes utilizando el método Imagenbytes de la clase Uplodimagen
+                            var imageArrays = uplodimagen.Imagenbytes(image.Image); // Converte la imagen del picturebox a un arreglo de bytes utilizando el método Imagenbytes de la clase Uplodimagen
+                            db.Insert(new estudiantes() {
+                                nid = textBoxes[0].Text,
+                                nombre = textBoxes[1].Text,
+                                apellido= textBoxes[2].Text,
+                                email = textBoxes[3].Text,
+                            });
                         }
                     }
                 }
