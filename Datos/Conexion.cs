@@ -18,7 +18,7 @@ namespace Data
         }
 
         //Aqui estaremos creando una propiedad para acceder a la base de datos y el mapeo de la misma con los modelos//
-        public ITable<estudiantes> estudiantes  { get { return GetTable<estudiantes>(); } }
+        public ITable<estudiantes> _estudiantes  { get { return GetTable<estudiantes>(); } }
 
         //Este método es para obtener la tabla de estudiantes desde la base de datos//
         private ITable<T> GetTable<T>()

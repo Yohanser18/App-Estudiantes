@@ -15,5 +15,6 @@ namespace Datos
         public string nombre { get; set; } // Propiedad para el nombre del estudiante
         public string apellido { get; set; }// Propiedad para el apellido del estudiante
         public string email { get; set; } // Propiedad para el email del estudiante
+        public byte[] image { get; set; } // Propiedad para la imagen del estudiante, almacenada como un arreglo de bytes
     }
 }

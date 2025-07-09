@@ -75,12 +75,19 @@ namespace Logica
                                  textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
                              }*/
                             var imageArrays = uplodimagen.Imagenbytes(image.Image); // Converte la imagen del picturebox a un arreglo de bytes utilizando el método Imagenbytes de la clase Uplodimagen
-                            db.Insert(new estudiantes() {
-                                nid = textBoxes[0].Text,
-                                nombre = textBoxes[1].Text,
-                                apellido= textBoxes[2].Text,
-                                email = textBoxes[3].Text,
-                            });
+                            //Esta es una forma de agregar datos a formulario utilizando LinqToDB//
+                             db.Insert(new estudiantes() {
+                                 nid = textBoxes[0].Text,
+                                 nombre = textBoxes[1].Text,
+                                 apellido= textBoxes[2].Text,
+                                 email = textBoxes[3].Text,
+                                 image = imageArrays // Asigna el arreglo de bytes de la imagen al campo imagen del objeto estudiantes
+                             });
+                            /*_estudiantes.Value(e => e.nid, textBoxes[0].Text)
+                            .Value(e => e.nombre, textBoxes[1].Text)
+                            .Value(e => e.apellido, textBoxes[2].Text)
+                            .Value(e => e.email, textBoxes[3].Text)
+                            .Insert();*/
                         }
                     }
                 }
