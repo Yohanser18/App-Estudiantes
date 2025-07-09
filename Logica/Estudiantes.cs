@@ -74,15 +74,17 @@ namespace Logica
                                  listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el campo Email no es válido
                                  textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
                              }*/
-                            var imageArrays = uplodimagen.Imagenbytes(image.Image); // Converte la imagen del picturebox a un arreglo de bytes utilizando el método Imagenbytes de la clase Uplodimagen
-                            //Esta es una forma de agregar datos a formulario utilizando LinqToDB//
-                             db.Insert(new estudiantes() {
-                                 nid = textBoxes[0].Text,
-                                 nombre = textBoxes[1].Text,
-                                 apellido= textBoxes[2].Text,
-                                 email = textBoxes[3].Text,
-                                 image = imageArrays // Asigna el arreglo de bytes de la imagen al campo imagen del objeto estudiantes
-                             });
+                            var usuario = db.GetTable<estudiantes>().Where(e => e.email == textBoxes[3].Text).ToList(); // Busca un estudiante en la base de datos por su email utilizando LinqToDB
+                            if (usuario.Count() == 0)
+                            {
+                                Guadar(); // Si el estudiante no existe, llama al método Guadar para guardar los datos del estudiante en la base de datos
+                            }
+                            else 
+                            {
+                                listaLabel[3].Text = "Ya este email heciste"; // Si el estudiante ya existe, muestra un mensaje de error en el TextBox de Email
+                                listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el email ya existe
+                                textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
+                            }
                             /*_estudiantes.Value(e => e.nid, textBoxes[0].Text)
                             .Value(e => e.nombre, textBoxes[1].Text)
                             .Value(e => e.apellido, textBoxes[2].Text)
@@ -93,5 +95,30 @@ namespace Logica
                 }
             }
         }
-    }
+
+        public void Guadar()// Aqui estamos guardando los datos del estudiante en la base de datos utilizando LinqToDB//
+        {
+            BeginTransactionAsync(); // Inicia una transacción asíncrona para realizar operaciones en la base de datos
+            try
+            {
+                var imageArrays = uplodimagen.Imagenbytes(image.Image); // Converte la imagen del picturebox a un arreglo de bytes utilizando el método Imagenbytes de la clase Uplodimagen
+                                                                        //Esta es una forma de agregar datos a formulario utilizando LinqToDB//
+                db.Insert(new estudiantes()
+                {
+                    nid = textBoxes[0].Text,
+                    nombre = textBoxes[1].Text,
+                    apellido = textBoxes[2].Text,
+                    email = textBoxes[3].Text,
+                    image = imageArrays // Asigna el arreglo de bytes de la imagen al campo imagen del objeto estudiantes
+                });
+
+                CommitTransaction(); // Confirma la transacción asíncrona si todo sale bien
+            }
+            catch (Exception)
+            {
+
+                RollbackTransaction(); // Revierte la transacción asíncrona si ocurre un error
+            }  
+        }
+    }  
 }
