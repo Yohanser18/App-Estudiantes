@@ -19,13 +19,18 @@ namespace Logica
         private List<TextBox> textBoxes; // Lista de TextBox que se utilizarán para validar los campos del formulario
         private List<Label> listaLabel; // Lista de Label que se utilizarán para mostrar mensajes de validación
         private PictureBox image; // PictureBox para mostrar la imagen del estudiante
-       // private Librarys librarys;// Instancia de la clase Librarys para usar sus métodos y propiedades
+        private Bitmap _imagBitmap; // Bitmap para almacenar la imagen del estudiante
+        private DataGridView _dataGridView; // DataGridView para mostrar la lista de estudiantes (aunque no se utiliza en este contexto)
+                                           // private Librarys librarys;// Instancia de la clase Librarys para usar sus métodos y propiedades
         public Estudiantes(List<TextBox> textBoxes, List<Label> listaLabel, object[] objects) // Constructor que recibe una lista de TextBox
         {
             this.textBoxes = textBoxes; // Asigna la lista de TextBox a la propiedad de la clase
             this.listaLabel = listaLabel; // Asigna la lista de Label a la propiedad de la clase
             image = (PictureBox)objects[0]; // Asigna el PictureBox del arreglo de objetos a la propiedad de la clase
+           _imagBitmap = (Bitmap)objects[1];
+           _dataGridView = (DataGridView)objects[2]; // Asigna el DataGridView del arreglo de objetos a la propiedad de la clase
             //librarys = new Librarys(); // Inicializa la instancia de la clase Librarys
+            LimpiarCampos(); // Llama al método LimpiarCampos para limpiar los campos del formulario al iniciar la clase
         }
 
         public void Registro() // Método para validar los campos del formulario antes de registrar un estudiante
@@ -96,7 +101,7 @@ namespace Logica
             }
         }
 
-        public void Guadar()// Aqui estamos guardando los datos del estudiante en la base de datos utilizando LinqToDB//
+        private void Guadar()// Aqui estamos guardando los datos del estudiante en la base de datos utilizando LinqToDB//
         {
             BeginTransactionAsync(); // Inicia una transacción asíncrona para realizar operaciones en la base de datos
             try
@@ -113,12 +118,62 @@ namespace Logica
                 });
 
                 CommitTransaction(); // Confirma la transacción asíncrona si todo sale bien
+                LimpiarCampos(); // Llama al método LimpiarCampos para limpiar los campos del formulario después de guardar los datos
             }
             catch (Exception)
             {
 
                 RollbackTransaction(); // Revierte la transacción asíncrona si ocurre un error
             }  
+        }
+
+        private int _reg_por_pagina = 4, _num_pagina = 1; // Variables para la paginación, donde _reg_por_pagina es el número de registros por página y _num_pagina es el número de la página actual
+        public void BuscarEtudiante(string campo)
+        {
+            List<estudiantes> query = new List<estudiantes>();// Creamos una lista de estudiantes para almacenar los resultados de la búsqueda
+            int inicio = (_num_pagina - 1) * _reg_por_pagina; //Esto es nuestro paginador //
+            if (campo == "")// Aqui estamos diciendo que si la varieble campos esta vacia ella no va entrar en la condicion//
+            {
+                query = db.GetTable<estudiantes>().ToList();// Obtiene todos los estudiantes de la base de datos y los almacena en la lista query
+            }
+            else
+            {
+                // Aqui estamos diciendo que si la varieble campo no esta vacia ella va entrar en la condicion//
+                query = db.GetTable<estudiantes>().Where(e => e.nid.StartsWith(campo) || 
+                e.nombre.StartsWith(campo) || e.apellido.StartsWith(campo)).ToList();
+
+            }
+            if (0 < query.Count)
+            {
+                _dataGridView.DataSource = query.Select(q => new {
+                    q.nid,
+                    q.nombre,
+                    q.apellido,
+                    q.email
+                }).Skip(inicio).Take(_reg_por_pagina).ToList();
+            }
+        }
+
+        private void LimpiarCampos()//Aqui vamos a limpiar los campos de texto cuando le demos al boton de agragar//
+        {
+            image.Image = _imagBitmap; // Asigna la imagen por defecto al PictureBox
+            //Aqui vamos a limpiar los campos de texto cuando le demos al boton de agragar//
+            listaLabel[0].Text = "NiD";
+            listaLabel[1].Text = "Nombre";
+            listaLabel[2].Text = "Apellidos";
+            listaLabel[3].Text = "Email";
+            //Aqui vamos agregar colores a los labels cuando limpiemos los campos//
+            listaLabel[0].ForeColor = Color.LightSlateGray;
+            listaLabel[1].ForeColor = Color.LightSlateGray;
+            listaLabel[2].ForeColor = Color.LightSlateGray;
+            listaLabel[3].ForeColor = Color.LightSlateGray;
+            //Limpiamos los campos de texto//
+            textBoxes[0].Text = "";
+            textBoxes[1].Text = "";
+            textBoxes[2].Text = "";
+            textBoxes[3].Text = "";
+            //Aqui estamos llamado el  DataGridView y limpiado tambien//
+            BuscarEtudiante(""); // Llama al método BuscarEtudiante con un campo vacío para mostrar todos los estudiantes en el DataGridView
         }
     }  
 }
