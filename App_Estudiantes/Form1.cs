@@ -118,5 +118,10 @@ namespace App_Estudiantes
         {
             estudiantes.Registro();// Aqui estamos llamado el metodo que creamos en la clase estudiante que es el que no va a mostrar la validacion del primer campo//
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            estudiantes.BuscarEstudiante(txtBuscar.Text);
+        }
     }
 }

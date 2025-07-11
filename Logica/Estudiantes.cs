@@ -27,7 +27,7 @@ namespace Logica
             this.textBoxes = textBoxes; // Asigna la lista de TextBox a la propiedad de la clase
             this.listaLabel = listaLabel; // Asigna la lista de Label a la propiedad de la clase
             image = (PictureBox)objects[0]; // Asigna el PictureBox del arreglo de objetos a la propiedad de la clase
-           _imagBitmap = (Bitmap)objects[1];
+           _imagBitmap = (Bitmap)objects[1];//Aqui estamos asignando la imagen por defecto al Bitmap //
            _dataGridView = (DataGridView)objects[2]; // Asigna el DataGridView del arreglo de objetos a la propiedad de la clase
             //librarys = new Librarys(); // Inicializa la instancia de la clase Librarys
             LimpiarCampos(); // Llama al método LimpiarCampos para limpiar los campos del formulario al iniciar la clase
@@ -67,29 +67,27 @@ namespace Logica
                         }
                         else
                         {
-                            /* if (textBoxEvent.ComprobarFormatoEmail(textBoxes[3].Text)) // Aquí estamos verificando si el campo Email es válido utilizando un método de la clase TextBoxEvent
+                             if (textBoxEvent.ComprobarFormatoEmail(textBoxes[3].Text)) // Aquí estamos verificando si el campo Email es válido utilizando un método de la clase TextBoxEvent
                              {
-                                 listaLabel[3].Text = "Email valido"; // Mensaje que se mostrara si el campo Email es valido
-                                 listaLabel[3].ForeColor = Color.Green; // Cambia el color del texto del Label a verde si el campo Email es válido
-                                 // Aquí puedes agregar la lógica para registrar al estudiante, como guardar los datos en una base de datos o en un archivo
+                                  var usuario = db.GetTable<estudiantes>().Where(e => e.email == textBoxes[3].Text).ToList(); // Busca un estudiante en la base de datos por su email utilizando LinqToDB
+                                     if (usuario.Count() == 0)
+                                     {
+                                         Guadar(); // Si el estudiante no existe, llama al método Guadar para guardar los datos del estudiante en la base de datos
+                                     }
+                                     else 
+                                     {
+                                          listaLabel[3].Text = "Ya este email heciste"; // Si el estudiante ya existe, muestra un mensaje de error en el TextBox de Email
+                                          listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el email ya existe
+                                          textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
+                                     }
                              }
                              else 
                              {
                                  listaLabel[3].Text = "Email no valido"; // Mensaje que se mostrara si el campo Email no es valido
                                  listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el campo Email no es válido
                                  textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
-                             }*/
-                            var usuario = db.GetTable<estudiantes>().Where(e => e.email == textBoxes[3].Text).ToList(); // Busca un estudiante en la base de datos por su email utilizando LinqToDB
-                            if (usuario.Count() == 0)
-                            {
-                                Guadar(); // Si el estudiante no existe, llama al método Guadar para guardar los datos del estudiante en la base de datos
-                            }
-                            else 
-                            {
-                                listaLabel[3].Text = "Ya este email heciste"; // Si el estudiante ya existe, muestra un mensaje de error en el TextBox de Email
-                                listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el email ya existe
-                                textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
-                            }
+                             }
+
                             /*_estudiantes.Value(e => e.nid, textBoxes[0].Text)
                             .Value(e => e.nombre, textBoxes[1].Text)
                             .Value(e => e.apellido, textBoxes[2].Text)
@@ -127,8 +125,8 @@ namespace Logica
             }  
         }
 
-        private int _reg_por_pagina = 4, _num_pagina = 1; // Variables para la paginación, donde _reg_por_pagina es el número de registros por página y _num_pagina es el número de la página actual
-        public void BuscarEtudiante(string campo)
+        private int _reg_por_pagina = 7, _num_pagina = 1; // Variables para la paginación, donde _reg_por_pagina es el número de registros por página y _num_pagina es el número de la página actual
+        public void BuscarEstudiante(string campo)
         {
             List<estudiantes> query = new List<estudiantes>();// Creamos una lista de estudiantes para almacenar los resultados de la búsqueda
             int inicio = (_num_pagina - 1) * _reg_por_pagina; //Esto es nuestro paginador //
@@ -143,14 +141,30 @@ namespace Logica
                 e.nombre.StartsWith(campo) || e.apellido.StartsWith(campo)).ToList();
 
             }
-            if (0 < query.Count)
+
+            if (0 < query.Count)// Aqui vamos a mostrar los datos en le dataGridView //
             {
                 _dataGridView.DataSource = query.Select(q => new {
+                    q.Id, 
                     q.nid,
                     q.nombre,
                     q.apellido,
                     q.email
                 }).Skip(inicio).Take(_reg_por_pagina).ToList();
+                _dataGridView.Columns[0].Visible = false; // Oculta la columna Id en el DataGridView
+
+                _dataGridView.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke; // Cambia el color de fondo de la columna NiD a blanco humo
+                _dataGridView.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke; // Cambia el color de fondo de la columna Email a blanco humo
+            }
+            else
+            {
+
+                _dataGridView.DataSource = query.Select(q => new {
+                    q.nid,
+                    q.nombre,
+                    q.apellido,
+                    q.email
+                }).ToList();
             }
         }
 
@@ -173,7 +187,7 @@ namespace Logica
             textBoxes[2].Text = "";
             textBoxes[3].Text = "";
             //Aqui estamos llamado el  DataGridView y limpiado tambien//
-            BuscarEtudiante(""); // Llama al método BuscarEtudiante con un campo vacío para mostrar todos los estudiantes en el DataGridView
+            BuscarEstudiante(""); // Llama al método BuscarEtudiante con un campo vacío para mostrar todos los estudiantes en el DataGridView
         }
     }  
 }
