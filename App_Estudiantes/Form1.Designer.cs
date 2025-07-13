@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.labelEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.labelNiD = new System.Windows.Forms.Label();
@@ -45,7 +41,6 @@
             this.labelNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.pictureImagen = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -54,18 +49,26 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.labelPagina = new System.Windows.Forms.Label();
+            this.btnCuarto = new System.Windows.Forms.Button();
+            this.btnTercero = new System.Windows.Forms.Button();
+            this.btnSegundo = new System.Windows.Forms.Button();
+            this.btnPrimero = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.pictureImagen = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureImagen)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -80,16 +83,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1031, 57);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::App_Estudiantes.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(54, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -127,52 +120,6 @@
             this.groupBox2.Size = new System.Drawing.Size(340, 404);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Brown;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::App_Estudiantes.Properties.Resources.delete_24dp_1F1F1F;
-            this.button1.Location = new System.Drawing.Point(120, 300);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 33);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Red;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Image = global::App_Estudiantes.Properties.Resources.cancel_24dp_1F1F1F;
-            this.btnCancelar.Location = new System.Drawing.Point(223, 300);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(87, 33);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Image = global::App_Estudiantes.Properties.Resources.note_add_24dp_1F1F1F;
-            this.btnAgregar.Location = new System.Drawing.Point(15, 300);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(87, 33);
-            this.btnAgregar.TabIndex = 5;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // labelEmail
             // 
@@ -270,17 +217,6 @@
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             // 
-            // pictureImagen
-            // 
-            this.pictureImagen.Image = global::App_Estudiantes.Properties.Resources.images;
-            this.pictureImagen.Location = new System.Drawing.Point(16, 19);
-            this.pictureImagen.Name = "pictureImagen";
-            this.pictureImagen.Size = new System.Drawing.Size(150, 79);
-            this.pictureImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureImagen.TabIndex = 0;
-            this.pictureImagen.TabStop = false;
-            this.pictureImagen.Click += new System.EventHandler(this.pictureImagen_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -298,10 +234,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.numericUpDown1);
+            this.groupBox3.Controls.Add(this.labelPagina);
+            this.groupBox3.Controls.Add(this.btnCuarto);
+            this.groupBox3.Controls.Add(this.btnTercero);
+            this.groupBox3.Controls.Add(this.btnSegundo);
+            this.groupBox3.Controls.Add(this.btnPrimero);
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(340, 128);
@@ -316,14 +254,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 88);
             this.dataGridView1.Name = "dataGridView1";
@@ -388,65 +326,165 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Buscar";
             // 
-            // button2
+            // labelPagina
             // 
-            this.button2.BackColor = System.Drawing.Color.SteelBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::App_Estudiantes.Properties.Resources.note_add_24dp_1F1F1F;
-            this.button2.Location = new System.Drawing.Point(229, 335);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 31);
-            this.button2.TabIndex = 6;
-            this.button2.UseVisualStyleBackColor = false;
+            this.labelPagina.AutoSize = true;
+            this.labelPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPagina.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelPagina.Location = new System.Drawing.Point(327, 326);
+            this.labelPagina.Name = "labelPagina";
+            this.labelPagina.Size = new System.Drawing.Size(59, 18);
+            this.labelPagina.TabIndex = 3;
+            this.labelPagina.Text = "Pagina";
             // 
-            // button3
+            // btnCuarto
             // 
-            this.button3.BackColor = System.Drawing.Color.SteelBlue;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::App_Estudiantes.Properties.Resources.note_add_24dp_1F1F1F;
-            this.button3.Location = new System.Drawing.Point(300, 335);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(65, 31);
-            this.button3.TabIndex = 7;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCuarto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCuarto.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCuarto.FlatAppearance.BorderSize = 0;
+            this.btnCuarto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnCuarto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnCuarto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCuarto.Image = global::App_Estudiantes.Properties.Resources.Right_4;
+            this.btnCuarto.Location = new System.Drawing.Point(438, 349);
+            this.btnCuarto.Name = "btnCuarto";
+            this.btnCuarto.Size = new System.Drawing.Size(65, 31);
+            this.btnCuarto.TabIndex = 9;
+            this.btnCuarto.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnTercero
             // 
-            this.button4.BackColor = System.Drawing.Color.SteelBlue;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::App_Estudiantes.Properties.Resources.note_add_24dp_1F1F1F;
-            this.button4.Location = new System.Drawing.Point(371, 335);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(65, 31);
-            this.button4.TabIndex = 8;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnTercero.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTercero.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnTercero.FlatAppearance.BorderSize = 0;
+            this.btnTercero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnTercero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnTercero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTercero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTercero.Image = global::App_Estudiantes.Properties.Resources.Right_2;
+            this.btnTercero.Location = new System.Drawing.Point(367, 349);
+            this.btnTercero.Name = "btnTercero";
+            this.btnTercero.Size = new System.Drawing.Size(65, 31);
+            this.btnTercero.TabIndex = 8;
+            this.btnTercero.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnSegundo
             // 
-            this.button5.BackColor = System.Drawing.Color.SteelBlue;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = global::App_Estudiantes.Properties.Resources.note_add_24dp_1F1F1F;
-            this.button5.Location = new System.Drawing.Point(442, 335);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(65, 31);
-            this.button5.TabIndex = 9;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnSegundo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSegundo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSegundo.FlatAppearance.BorderSize = 0;
+            this.btnSegundo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnSegundo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnSegundo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSegundo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSegundo.Image = global::App_Estudiantes.Properties.Resources.Left_2;
+            this.btnSegundo.Location = new System.Drawing.Point(296, 349);
+            this.btnSegundo.Name = "btnSegundo";
+            this.btnSegundo.Size = new System.Drawing.Size(65, 31);
+            this.btnSegundo.TabIndex = 7;
+            this.btnSegundo.UseVisualStyleBackColor = false;
+            // 
+            // btnPrimero
+            // 
+            this.btnPrimero.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrimero.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPrimero.FlatAppearance.BorderSize = 0;
+            this.btnPrimero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnPrimero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnPrimero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrimero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrimero.Image = global::App_Estudiantes.Properties.Resources.Left_1;
+            this.btnPrimero.Location = new System.Drawing.Point(225, 349);
+            this.btnPrimero.Name = "btnPrimero";
+            this.btnPrimero.Size = new System.Drawing.Size(65, 31);
+            this.btnPrimero.TabIndex = 6;
+            this.btnPrimero.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Brown;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::App_Estudiantes.Properties.Resources.delete_24dp_1F1F1F;
+            this.button1.Location = new System.Drawing.Point(120, 300);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 33);
+            this.button1.TabIndex = 6;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = global::App_Estudiantes.Properties.Resources.cancel_24dp_1F1F1F;
+            this.btnCancelar.Location = new System.Drawing.Point(223, 300);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(87, 33);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Image = global::App_Estudiantes.Properties.Resources.note_add_24dp_1F1F1F;
+            this.btnAgregar.Location = new System.Drawing.Point(15, 300);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(87, 33);
+            this.btnAgregar.TabIndex = 5;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // pictureImagen
+            // 
+            this.pictureImagen.Image = global::App_Estudiantes.Properties.Resources.images;
+            this.pictureImagen.Location = new System.Drawing.Point(16, 19);
+            this.pictureImagen.Name = "pictureImagen";
+            this.pictureImagen.Size = new System.Drawing.Size(150, 79);
+            this.pictureImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureImagen.TabIndex = 0;
+            this.pictureImagen.TabStop = false;
+            this.pictureImagen.Click += new System.EventHandler(this.pictureImagen_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::App_Estudiantes.Properties.Resources.images;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(16, 349);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(85, 21);
+            this.numericUpDown1.TabIndex = 10;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
@@ -462,16 +500,17 @@
             this.Text = "Sistema de Estudiantes";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureImagen)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,10 +542,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnPrimero;
+        private System.Windows.Forms.Button btnCuarto;
+        private System.Windows.Forms.Button btnTercero;
+        private System.Windows.Forms.Button btnSegundo;
+        private System.Windows.Forms.Label labelPagina;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 

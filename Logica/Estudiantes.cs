@@ -21,7 +21,8 @@ namespace Logica
         private PictureBox image; // PictureBox para mostrar la imagen del estudiante
         private Bitmap _imagBitmap; // Bitmap para almacenar la imagen del estudiante
         private DataGridView _dataGridView; // DataGridView para mostrar la lista de estudiantes (aunque no se utiliza en este contexto)
-                                           // private Librarys librarys;// Instancia de la clase Librarys para usar sus métodos y propiedades
+        private NumericUpDown _numericUpDown; // NumericUpDown para la paginación (aunque no se utiliza en este contexto)
+        // private Librarys librarys;// Instancia de la clase Librarys para usar sus métodos y propiedades
         public Estudiantes(List<TextBox> textBoxes, List<Label> listaLabel, object[] objects) // Constructor que recibe una lista de TextBox
         {
             this.textBoxes = textBoxes; // Asigna la lista de TextBox a la propiedad de la clase
@@ -29,6 +30,7 @@ namespace Logica
             image = (PictureBox)objects[0]; // Asigna el PictureBox del arreglo de objetos a la propiedad de la clase
            _imagBitmap = (Bitmap)objects[1];//Aqui estamos asignando la imagen por defecto al Bitmap //
            _dataGridView = (DataGridView)objects[2]; // Asigna el DataGridView del arreglo de objetos a la propiedad de la clase
+           _numericUpDown = (NumericUpDown)objects[3]; // Asigna el NumericUpDown del arreglo de objetos a la propiedad de la clase
             //librarys = new Librarys(); // Inicializa la instancia de la clase Librarys
             LimpiarCampos(); // Llama al método LimpiarCampos para limpiar los campos del formulario al iniciar la clase
         }

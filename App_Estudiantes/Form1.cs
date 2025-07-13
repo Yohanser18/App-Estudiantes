@@ -30,8 +30,9 @@ namespace App_Estudiantes
             listaLabel.Add(labelNombre);// Agrega el Label labelNombre a la lista
             listaLabel.Add(labelApellido);// Agrega el Label labelApellido a la lista
             listaLabel.Add(labelEmail);// Agrega el Label labelEmail a la lista
+            listaLabel.Add(labelPagina);// Agrega el Label labelPagina a la lista
 
-            Object[] objects = { pictureImagen, Properties.Resources.images, dataGridView1 }; // Inicializa un arreglo de objetos vacío, aunque no se utiliza en este contexto
+            Object[] objects = { pictureImagen, Properties.Resources.images, dataGridView1, numericUpDown1 }; // Inicializa un arreglo de objetos vacío, aunque no se utiliza en este contexto
             estudiantes = new Estudiantes(ListaCampos, listaLabel, objects);//Aqui vamos utilizando los campos del formulario para integralor a la clase estudientes para utilizarlo aqui esta es la logica//
         }
 

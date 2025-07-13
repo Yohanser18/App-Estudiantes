@@ -116,5 +116,23 @@
       <Name>Logica</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right-4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
