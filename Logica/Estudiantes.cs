@@ -16,7 +16,7 @@ namespace Logica
     public class Estudiantes : Librarys // Clase que hereda de Librarys para usar sus métodos y propiedades
     {
         Conexion db = new Conexion(); // Instancia de la clase Conexion para interactuar con la base de datos
-        private int _reg_por_pagina = 7, _num_pagina = 1; // Variables para la paginación, donde _reg_por_pagina es el número de registros por página y _num_pagina es el número de la página actual
+        private int _reg_por_pagina = 2, _num_pagina = 1; // Variables para la paginación, donde _reg_por_pagina es el número de registros por página y _num_pagina es el número de la página actual
         private List<estudiantes> listaestudiante; // Lista de estudiantes que se utilizará para almacenar los datos de los estudiantes obtenidos de la base de datos
 
         private List<TextBox> textBoxes; // Lista de TextBox que se utilizarán para validar los campos del formulario
@@ -184,8 +184,8 @@ namespace Logica
                 case "Anterior":
                     _num_pagina = _paginador.anterior();
                     break;
-                case "Siguuente":
-                    _num_pagina = _paginador.siguente();
+                case "Siguiente":
+                    _num_pagina = _paginador.siguiente();
                     break;
                 case "Ultimo":
                     _num_pagina = _paginador.ultimo();
