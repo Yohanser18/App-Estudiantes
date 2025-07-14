@@ -63,6 +63,7 @@
     <Compile Include="Library\Librarys.cs" />
     <Compile Include="Library\TextBoxEvent.cs" />
     <Compile Include="Library\Uplodimagen.cs" />
+    <Compile Include="Paginador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

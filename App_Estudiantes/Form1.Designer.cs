@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -49,10 +49,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelPagina = new System.Windows.Forms.Label();
-            this.btnCuarto = new System.Windows.Forms.Button();
-            this.btnTercero = new System.Windows.Forms.Button();
-            this.btnSegundo = new System.Windows.Forms.Button();
+            this.labelPaginas = new System.Windows.Forms.Label();
+            this.btnUltimo = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
             this.btnPrimero = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -235,10 +235,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.numericUpDown1);
-            this.groupBox3.Controls.Add(this.labelPagina);
-            this.groupBox3.Controls.Add(this.btnCuarto);
-            this.groupBox3.Controls.Add(this.btnTercero);
-            this.groupBox3.Controls.Add(this.btnSegundo);
+            this.groupBox3.Controls.Add(this.labelPaginas);
+            this.groupBox3.Controls.Add(this.btnUltimo);
+            this.groupBox3.Controls.Add(this.btnSiguiente);
+            this.groupBox3.Controls.Add(this.btnAnterior);
             this.groupBox3.Controls.Add(this.btnPrimero);
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Controls.Add(this.label4);
@@ -254,14 +254,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 88);
             this.dataGridView1.Name = "dataGridView1";
@@ -326,64 +326,67 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Buscar";
             // 
-            // labelPagina
+            // labelPaginas
             // 
-            this.labelPagina.AutoSize = true;
-            this.labelPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPagina.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelPagina.Location = new System.Drawing.Point(327, 326);
-            this.labelPagina.Name = "labelPagina";
-            this.labelPagina.Size = new System.Drawing.Size(59, 18);
-            this.labelPagina.TabIndex = 3;
-            this.labelPagina.Text = "Pagina";
+            this.labelPaginas.AutoSize = true;
+            this.labelPaginas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPaginas.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelPaginas.Location = new System.Drawing.Point(327, 326);
+            this.labelPaginas.Name = "labelPaginas";
+            this.labelPaginas.Size = new System.Drawing.Size(68, 18);
+            this.labelPaginas.TabIndex = 3;
+            this.labelPaginas.Text = "Paginas";
             // 
-            // btnCuarto
+            // btnUltimo
             // 
-            this.btnCuarto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCuarto.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnCuarto.FlatAppearance.BorderSize = 0;
-            this.btnCuarto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnCuarto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCuarto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCuarto.Image = global::App_Estudiantes.Properties.Resources.Right_4;
-            this.btnCuarto.Location = new System.Drawing.Point(438, 349);
-            this.btnCuarto.Name = "btnCuarto";
-            this.btnCuarto.Size = new System.Drawing.Size(65, 31);
-            this.btnCuarto.TabIndex = 9;
-            this.btnCuarto.UseVisualStyleBackColor = false;
+            this.btnUltimo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUltimo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnUltimo.FlatAppearance.BorderSize = 0;
+            this.btnUltimo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnUltimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUltimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUltimo.Image = global::App_Estudiantes.Properties.Resources.Right_4;
+            this.btnUltimo.Location = new System.Drawing.Point(438, 349);
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.Size = new System.Drawing.Size(65, 31);
+            this.btnUltimo.TabIndex = 9;
+            this.btnUltimo.UseVisualStyleBackColor = false;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
             // 
-            // btnTercero
+            // btnSiguiente
             // 
-            this.btnTercero.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTercero.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnTercero.FlatAppearance.BorderSize = 0;
-            this.btnTercero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnTercero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnTercero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTercero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTercero.Image = global::App_Estudiantes.Properties.Resources.Right_2;
-            this.btnTercero.Location = new System.Drawing.Point(367, 349);
-            this.btnTercero.Name = "btnTercero";
-            this.btnTercero.Size = new System.Drawing.Size(65, 31);
-            this.btnTercero.TabIndex = 8;
-            this.btnTercero.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSiguiente.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnSiguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Image = global::App_Estudiantes.Properties.Resources.Right_2;
+            this.btnSiguiente.Location = new System.Drawing.Point(367, 349);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(65, 31);
+            this.btnSiguiente.TabIndex = 8;
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // btnSegundo
+            // btnAnterior
             // 
-            this.btnSegundo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSegundo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSegundo.FlatAppearance.BorderSize = 0;
-            this.btnSegundo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnSegundo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnSegundo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSegundo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSegundo.Image = global::App_Estudiantes.Properties.Resources.Left_2;
-            this.btnSegundo.Location = new System.Drawing.Point(296, 349);
-            this.btnSegundo.Name = "btnSegundo";
-            this.btnSegundo.Size = new System.Drawing.Size(65, 31);
-            this.btnSegundo.TabIndex = 7;
-            this.btnSegundo.UseVisualStyleBackColor = false;
+            this.btnAnterior.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAnterior.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAnterior.FlatAppearance.BorderSize = 0;
+            this.btnAnterior.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.Image = global::App_Estudiantes.Properties.Resources.Left_2;
+            this.btnAnterior.Location = new System.Drawing.Point(296, 349);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(65, 31);
+            this.btnAnterior.TabIndex = 7;
+            this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnPrimero
             // 
@@ -400,6 +403,7 @@
             this.btnPrimero.Size = new System.Drawing.Size(65, 31);
             this.btnPrimero.TabIndex = 6;
             this.btnPrimero.UseVisualStyleBackColor = false;
+            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
             // 
             // button1
             // 
@@ -543,10 +547,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnPrimero;
-        private System.Windows.Forms.Button btnCuarto;
-        private System.Windows.Forms.Button btnTercero;
-        private System.Windows.Forms.Button btnSegundo;
-        private System.Windows.Forms.Label labelPagina;
+        private System.Windows.Forms.Button btnUltimo;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Label labelPaginas;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

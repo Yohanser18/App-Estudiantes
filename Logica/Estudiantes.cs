@@ -16,13 +16,17 @@ namespace Logica
     public class Estudiantes : Librarys // Clase que hereda de Librarys para usar sus métodos y propiedades
     {
         Conexion db = new Conexion(); // Instancia de la clase Conexion para interactuar con la base de datos
+        private int _reg_por_pagina = 7, _num_pagina = 1; // Variables para la paginación, donde _reg_por_pagina es el número de registros por página y _num_pagina es el número de la página actual
+        private List<estudiantes> listaestudiante; // Lista de estudiantes que se utilizará para almacenar los datos de los estudiantes obtenidos de la base de datos
+
         private List<TextBox> textBoxes; // Lista de TextBox que se utilizarán para validar los campos del formulario
         private List<Label> listaLabel; // Lista de Label que se utilizarán para mostrar mensajes de validación
         private PictureBox image; // PictureBox para mostrar la imagen del estudiante
         private Bitmap _imagBitmap; // Bitmap para almacenar la imagen del estudiante
         private DataGridView _dataGridView; // DataGridView para mostrar la lista de estudiantes (aunque no se utiliza en este contexto)
         private NumericUpDown _numericUpDown; // NumericUpDown para la paginación (aunque no se utiliza en este contexto)
-        // private Librarys librarys;// Instancia de la clase Librarys para usar sus métodos y propiedades
+        private Paginador<estudiantes> _paginador; // Instancia de la clase Paginador para manejar la paginación de estudiantes
+
         public Estudiantes(List<TextBox> textBoxes, List<Label> listaLabel, object[] objects) // Constructor que recibe una lista de TextBox
         {
             this.textBoxes = textBoxes; // Asigna la lista de TextBox a la propiedad de la clase
@@ -31,7 +35,6 @@ namespace Logica
            _imagBitmap = (Bitmap)objects[1];//Aqui estamos asignando la imagen por defecto al Bitmap //
            _dataGridView = (DataGridView)objects[2]; // Asigna el DataGridView del arreglo de objetos a la propiedad de la clase
            _numericUpDown = (NumericUpDown)objects[3]; // Asigna el NumericUpDown del arreglo de objetos a la propiedad de la clase
-            //librarys = new Librarys(); // Inicializa la instancia de la clase Librarys
             LimpiarCampos(); // Llama al método LimpiarCampos para limpiar los campos del formulario al iniciar la clase
         }
 
@@ -107,7 +110,7 @@ namespace Logica
             try
             {
                 var imageArrays = uplodimagen.Imagenbytes(image.Image); // Converte la imagen del picturebox a un arreglo de bytes utilizando el método Imagenbytes de la clase Uplodimagen
-                                                                        //Esta es una forma de agregar datos a formulario utilizando LinqToDB//
+               //Esta es una forma de agregar datos a formulario utilizando LinqToDB//
                 db.Insert(new estudiantes()
                 {
                     nid = textBoxes[0].Text,
@@ -127,7 +130,7 @@ namespace Logica
             }  
         }
 
-        private int _reg_por_pagina = 7, _num_pagina = 1; // Variables para la paginación, donde _reg_por_pagina es el número de registros por página y _num_pagina es el número de la página actual
+        
         public void BuscarEstudiante(string campo)
         {
             List<estudiantes> query = new List<estudiantes>();// Creamos una lista de estudiantes para almacenar los resultados de la búsqueda
@@ -153,6 +156,7 @@ namespace Logica
                     q.apellido,
                     q.email
                 }).Skip(inicio).Take(_reg_por_pagina).ToList();
+
                 _dataGridView.Columns[0].Visible = false; // Oculta la columna Id en el DataGridView
 
                 _dataGridView.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke; // Cambia el color de fondo de la columna NiD a blanco humo
@@ -166,8 +170,28 @@ namespace Logica
                     q.nombre,
                     q.apellido,
                     q.email
-                }).ToList();
+                }).ToList();// Aqui el datagridview mostrara una lista con los datos que pidamos si la condicion de arriba no se comple
             }
+        }
+
+        public void Paginador(string metodo)
+        {
+            switch (metodo)
+            {
+                case "Primero":
+                  _num_pagina = _paginador.primero();
+                    break;
+                case "Anterior":
+                    _num_pagina = _paginador.anterior();
+                    break;
+                case "Siguuente":
+                    _num_pagina = _paginador.siguente();
+                    break;
+                case "Ultimo":
+                    _num_pagina = _paginador.ultimo();
+                    break;
+            }
+            BuscarEstudiante(""); // Llama al método BuscarEstudiante para actualizar la lista de estudiantes mostrada en el DataGridView
         }
 
         private void LimpiarCampos()//Aqui vamos a limpiar los campos de texto cuando le demos al boton de agragar//
@@ -188,6 +212,14 @@ namespace Logica
             textBoxes[1].Text = "";
             textBoxes[2].Text = "";
             textBoxes[3].Text = "";
+            // Obtiene todos los estudiantes de la base de datos y los almacena en la lista listaestodiante
+            listaestudiante = db.GetTable<estudiantes>().ToList();
+            if (0 < listaestudiante.Count)
+            {
+                _paginador = new Paginador<estudiantes>(listaestudiante, 
+                    listaLabel[4],
+                    _reg_por_pagina);// Aquí estamos creando una nueva instancia de Paginador con la lista de estudiantes, la etiqueta para mostrar la paginación y el número de registros por página
+            }
             //Aqui estamos llamado el  DataGridView y limpiado tambien//
             BuscarEstudiante(""); // Llama al método BuscarEtudiante con un campo vacío para mostrar todos los estudiantes en el DataGridView
         }

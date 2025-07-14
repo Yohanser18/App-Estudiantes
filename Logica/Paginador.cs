@@ -55,7 +55,7 @@ namespace Logica
             return numPagi;
         }
 
-        public int siguuente() // Metodo para ir a la pagina siguiente
+        public int siguente() // Metodo para ir a la pagina siguiente
         {
             if (numPagi == pageCount) numPagi -= 1;// Aqui estamos diciendo que si el numero de pagina es igual al total de tadas la piginas//
             if (numPagi < pageCount)// Verifica si no es la última página

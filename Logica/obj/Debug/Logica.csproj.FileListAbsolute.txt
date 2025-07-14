@@ -1,14 +1,9 @@
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\Logica.dll
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\Logica.pdb
-C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\System.ComponentModel.Annotations.dll
-C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
-C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
-C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.csproj.Up2Date
-C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.dll
-C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.pdb
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\Datos.dll
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\linq2db.dll
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\Datos.pdb
@@ -16,3 +11,8 @@ C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\linq2db.xml
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.csproj.Up2Date
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.dll
+C:\Users\nask9\OneDrive\Desktop\App_Estudiantes\Logica\obj\Debug\Logica.pdb

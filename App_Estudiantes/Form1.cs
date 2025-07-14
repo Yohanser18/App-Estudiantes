@@ -30,7 +30,7 @@ namespace App_Estudiantes
             listaLabel.Add(labelNombre);// Agrega el Label labelNombre a la lista
             listaLabel.Add(labelApellido);// Agrega el Label labelApellido a la lista
             listaLabel.Add(labelEmail);// Agrega el Label labelEmail a la lista
-            listaLabel.Add(labelPagina);// Agrega el Label labelPagina a la lista
+            listaLabel.Add(labelPaginas);// Agrega el Label labelPagina a la lista
 
             Object[] objects = { pictureImagen, Properties.Resources.images, dataGridView1, numericUpDown1 }; // Inicializa un arreglo de objetos vacío, aunque no se utiliza en este contexto
             estudiantes = new Estudiantes(ListaCampos, listaLabel, objects);//Aqui vamos utilizando los campos del formulario para integralor a la clase estudientes para utilizarlo aqui esta es la logica//
@@ -120,9 +120,29 @@ namespace App_Estudiantes
             estudiantes.Registro();// Aqui estamos llamado el metodo que creamos en la clase estudiante que es el que no va a mostrar la validacion del primer campo//
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e) // Aqui estamos haciendo el filtrado por en el campo de busqueda
         {
-            estudiantes.BuscarEstudiante(txtBuscar.Text);
+            estudiantes.BuscarEstudiante(txtBuscar.Text);//Aqui estamos pasando el metodo nos hace esa funcion de busqueda
+        }
+
+        private void btnPrimero_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Primero");
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Anterior");
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Siguiente");
+        }
+
+        private void btnUltimo_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Utlimo");
         }
     }
 }
