@@ -125,24 +125,29 @@ namespace App_Estudiantes
             estudiantes.BuscarEstudiante(txtBuscar.Text);//Aqui estamos pasando el metodo nos hace esa funcion de busqueda
         }
 
-        private void btnPrimero_Click(object sender, EventArgs e)
+        private void btnPrimero_Click(object sender, EventArgs e)//Este evento del boton primero
         {
-            estudiantes.Paginador("Primero");
+            estudiantes.Paginador("Primero");// esto es el metodo que no va a mover ala primera pagina de la lista de estudiantes//
         }
 
-        private void btnAnterior_Click(object sender, EventArgs e)
+        private void btnAnterior_Click(object sender, EventArgs e)//Este evento del boton anterior
         {
-            estudiantes.Paginador("Anterior");
+            estudiantes.Paginador("Anterior");// esto es el metodo que no va a mover ala pagina anterior de la lista de estudiantes//
         }
 
-        private void btnSiguiente_Click(object sender, EventArgs e)
+        private void btnSiguiente_Click(object sender, EventArgs e)// Este evento del boton siguiente
         {
-            estudiantes.Paginador("Siguiente");
+            estudiantes.Paginador("Siguiente");// esto es el metodo que no va a mover ala pagina siguiente de la lista de estudiantes//
         }
 
-        private void btnUltimo_Click(object sender, EventArgs e)
+        private void btnUltimo_Click(object sender, EventArgs e)// Este evento del boton ultimo
         {
-            estudiantes.Paginador("Utlimo");
+            estudiantes.Paginador("Ultimo");// esto es el metodo que no va a mover ala ultima pagina de la lista de estudiantes//
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)// Este evento del NumericUpDown para cambiar el numero de Registro//
+        {
+            estudiantes.Registro_Paginas();// Aqui estamos llamando el metodo que nos va a cambiar el numero de registro por pagina//
         }
     }
 }

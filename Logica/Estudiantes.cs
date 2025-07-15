@@ -174,24 +174,39 @@ namespace Logica
             }
         }
 
-        public void Paginador(string metodo)
+        public void Paginador(string metodo) // Método para manejar la paginación de estudiantes según el método especificado
         {
             switch (metodo)
             {
                 case "Primero":
-                  _num_pagina = _paginador.primero();
+                  _num_pagina = _paginador.primero();// Llama al método primero del paginador para ir a la primera página
                     break;
                 case "Anterior":
-                    _num_pagina = _paginador.anterior();
+                    _num_pagina = _paginador.anterior();// Llama al método anterior del paginador para ir a la página anterior
                     break;
                 case "Siguiente":
-                    _num_pagina = _paginador.siguiente();
+                    _num_pagina = _paginador.siguiente();// Llama al método siguiente del paginador para ir a la página siguiente
                     break;
                 case "Ultimo":
-                    _num_pagina = _paginador.ultimo();
+                    _num_pagina = _paginador.ultimo();// Llama al método ultimo del paginador para ir a la última página
                     break;
+                /*default:
+                    MessageBox.Show("Metodo no reconocido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); // Muestra un mensaje de error si el método no es reconocido
+                    break;*/
             }
             BuscarEstudiante(""); // Llama al método BuscarEstudiante para actualizar la lista de estudiantes mostrada en el DataGridView
+        }
+
+        public void Registro_Paginas()// Este metodo es para registrar los datos de la paginacion//
+        {
+            _num_pagina = 1;// Reinicia el número de página a 1
+            _reg_por_pagina = (int)_numericUpDown.Value;// Obtiene el valor del NumericUpDown y lo asigna a _reg_por_pagina
+            var list = db.GetTable<estudiantes>().ToList();// Obtiene todos los estudiantes de la base de datos y los almacena en la lista list
+            if (0 < list.Count)// Aqui estamos verificando si la lista de estudiantes tiene elementos//
+            {
+                _paginador = new Paginador<estudiantes>(listaestudiante, listaLabel[4], _reg_por_pagina);// Aquí estamos creando una nueva instancia de Paginador con la lista de estudiantes, la etiqueta para mostrar la paginación y el número de registros por página
+                BuscarEstudiante("");// Llama al método BuscarEstudiante con un campo vacío para mostrar todos los estudiantes en el DataGridView
+            }
         }
 
         private void LimpiarCampos()//Aqui vamos a limpiar los campos de texto cuando le demos al boton de agragar//
