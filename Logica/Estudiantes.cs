@@ -18,6 +18,8 @@ namespace Logica
         Conexion db = new Conexion(); // Instancia de la clase Conexion para interactuar con la base de datos
         private int _reg_por_pagina = 2, _num_pagina = 1; // Variables para la paginación, donde _reg_por_pagina es el número de registros por página y _num_pagina es el número de la página actual
         private List<estudiantes> listaestudiante; // Lista de estudiantes que se utilizará para almacenar los datos de los estudiantes obtenidos de la base de datos
+        private int _idEstudiante = 0; // Variable para almacenar el ID del estudiante seleccionado (aunque no se utiliza en este contexto)
+        private string _accion = "insert"; // aqui estamos creado una variable que va a decir el tipo de accion que estemos ejecuentado//
 
         private List<TextBox> textBoxes; // Lista de TextBox que se utilizarán para validar los campos del formulario
         private List<Label> listaLabel; // Lista de Label que se utilizarán para mostrar mensajes de validación
@@ -74,16 +76,23 @@ namespace Logica
                         {
                              if (textBoxEvent.ComprobarFormatoEmail(textBoxes[3].Text)) // Aquí estamos verificando si el campo Email es válido utilizando un método de la clase TextBoxEvent
                              {
-                                  var usuario = db.GetTable<estudiantes>().Where(e => e.email == textBoxes[3].Text).ToList(); // Busca un estudiante en la base de datos por su email utilizando LinqToDB
+                                     var usuario = db.GetTable<estudiantes>().Where(e => e.email == textBoxes[3].Text).ToList(); // Busca un estudiante en la base de datos por su email utilizando LinqToDB
                                      if (usuario.Count() == 0)
                                      {
                                          Guadar(); // Si el estudiante no existe, llama al método Guadar para guardar los datos del estudiante en la base de datos
                                      }
                                      else 
                                      {
-                                          listaLabel[3].Text = "Ya este email heciste"; // Si el estudiante ya existe, muestra un mensaje de error en el TextBox de Email
-                                          listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el email ya existe
-                                          textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
+                                           if (usuario[0].Id.Equals(_idEstudiante))
+                                           {
+                                             Guadar(); // Si el estudiante ya existe pero es el mismo que se está editando, llama al método Guadar para actualizar los datos del estudiante en la base de datos
+                                           }
+                                           else
+                                           {
+                                              listaLabel[3].Text = "Ya este email heciste"; // Si el estudiante ya existe, muestra un mensaje de error en el TextBox de Email
+                                              listaLabel[3].ForeColor = Color.Red; // Cambia el color del texto del Label a rojo si el email ya existe
+                                              textBoxes[3].Focus(); // Establece el foco en el TextBox de Email para que el usuario pueda corregirlo
+                                           }
                                      }
                              }
                              else 
@@ -110,15 +119,34 @@ namespace Logica
             try
             {
                 var imageArrays = uplodimagen.Imagenbytes(image.Image); // Converte la imagen del picturebox a un arreglo de bytes utilizando el método Imagenbytes de la clase Uplodimagen
-               //Esta es una forma de agregar datos a formulario utilizando LinqToDB//
-                db.Insert(new estudiantes()
+                switch (_accion)
                 {
-                    nid = textBoxes[0].Text,
-                    nombre = textBoxes[1].Text,
-                    apellido = textBoxes[2].Text,
-                    email = textBoxes[3].Text,
-                    image = imageArrays // Asigna el arreglo de bytes de la imagen al campo imagen del objeto estudiantes
-                });
+                    case "insert":
+                        //Esta es una forma de agregar datos a formulario utilizando LinqToDB//
+                        db.Insert(new estudiantes()
+                        {
+                            nid = textBoxes[0].Text,
+                            nombre = textBoxes[1].Text,
+                            apellido = textBoxes[2].Text,
+                            email = textBoxes[3].Text,
+                            image = imageArrays // Asigna el arreglo de bytes de la imagen al campo imagen del objeto estudiantes
+                        });
+                        break;
+                    case "update":
+                        //Esta es una forma de actualizar datos a formulario utilizando LinqToDB//
+                        db.Update(new estudiantes()
+                        {
+                            Id = _idEstudiante, // Asigna el ID del estudiante a actualizar
+                            nid = textBoxes[0].Text, // Asigna el NiD del estudiante
+                            nombre = textBoxes[1].Text, // Asigna el nombre del estudiante
+                            apellido = textBoxes[2].Text, // Asigna el apellido del estudiante
+                            email = textBoxes[3].Text, // Asigna el email del estudiante
+                            image = imageArrays // Asigna el arreglo de bytes de la imagen al campo imagen del objeto estudiantes
+                        });
+                        break;
+                    default:
+                        break;
+                }
 
                 CommitTransaction(); // Confirma la transacción asíncrona si todo sale bien
                 LimpiarCampos(); // Llama al método LimpiarCampos para limpiar los campos del formulario después de guardar los datos
@@ -154,10 +182,12 @@ namespace Logica
                     q.nid,
                     q.nombre,
                     q.apellido,
-                    q.email
+                    q.email,
+                    q.image
                 }).Skip(inicio).Take(_reg_por_pagina).ToList();
 
                 _dataGridView.Columns[0].Visible = false; // Oculta la columna Id en el DataGridView
+                _dataGridView.Columns[5].Visible = false; // Oculta la columna image en el DataGridView
 
                 _dataGridView.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke; // Cambia el color de fondo de la columna NiD a blanco humo
                 _dataGridView.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke; // Cambia el color de fondo de la columna Email a blanco humo
@@ -172,6 +202,27 @@ namespace Logica
                     q.email
                 }).ToList();// Aqui el datagridview mostrara una lista con los datos que pidamos si la condicion de arriba no se comple
             }
+        }
+
+        public void GetEstudiante()// Este es metodo de los evento que agregamos en el formulario CellClik y KeyUp//
+        {
+            _accion = "update";
+            _idEstudiante = Convert.ToInt16(_dataGridView.CurrentRow.Cells[0].Value);// Asigna el ID del estudiante seleccionado en el DataGridView a la variable _idEstudiante
+            textBoxes[0].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[1].Value);// Asigna el valor del NiD del estudiante seleccionado al TextBox correspondiente
+            textBoxes[1].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[2].Value);// Asigna el valor del nombre del estudiante seleccionado al TextBox correspondiente
+            textBoxes[2].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[3].Value);// Asigna el valor del apellido del estudiante seleccionado al TextBox correspondiente
+            textBoxes[3].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[4].Value);// Asigna el valor del email del estudiante seleccionado al TextBox correspondiente
+            try
+            {
+                byte[] arrayImagen = (byte[])_dataGridView.CurrentRow.Cells[5].Value;
+                image.Image = uplodimagen.byteArrayToImage(arrayImagen); // Convierte el arreglo de bytes de la imagen a una imagen y la asigna al PictureBox
+            }
+            catch (Exception)
+            {
+
+                image.Image = _imagBitmap; // Si ocurre un error al convertir la imagen, asigna la imagen por defecto al PictureBox
+            }
+
         }
 
         public void Paginador(string metodo) // Método para manejar la paginación de estudiantes según el método especificado
@@ -190,9 +241,9 @@ namespace Logica
                 case "Ultimo":
                     _num_pagina = _paginador.ultimo();// Llama al método ultimo del paginador para ir a la última página
                     break;
-                /*default:
+                default:
                     MessageBox.Show("Metodo no reconocido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); // Muestra un mensaje de error si el método no es reconocido
-                    break;*/
+                    break;
             }
             BuscarEstudiante(""); // Llama al método BuscarEstudiante para actualizar la lista de estudiantes mostrada en el DataGridView
         }
@@ -209,19 +260,50 @@ namespace Logica
             }
         }
 
-        private void LimpiarCampos()//Aqui vamos a limpiar los campos de texto cuando le demos al boton de agragar//
+        public void Eliminar()// este es el metodo que vamos a ejecutar para hacer la accion de del eliminado de regitro de la tabla//
         {
+            var imageArrays = uplodimagen.Imagenbytes(image.Image);
+
+            if (_idEstudiante == 0)
+            {
+                MessageBox.Show("Seleccione un Estudiante");
+            }
+            else
+            {
+                if (MessageBox.Show("Esta seguro de Elimanar el estudiante?", "Eliminar Estudiante", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    db.Delete(new estudiantes()
+                    {
+                        Id = _idEstudiante,
+                        nid = textBoxes[0].Text,
+                        nombre = textBoxes[1].Text,
+                        apellido = textBoxes[2].Text,
+                        email = textBoxes[3].Text,
+                        image = imageArrays
+                    });
+
+                    LimpiarCampos();
+                }
+            }
+        }
+
+        public void LimpiarCampos()//Aqui vamos a limpiar los campos de texto cuando le demos al boton de agragar//
+        {
+            _accion = "insert"; // Reinicia la acción a "insert" para indicar que se va a agregar un nuevo estudiante
+            _num_pagina = 1; // Reinicia el número de página a 1 para mostrar la primera página de estudiantes
+            _idEstudiante = 0; // Reinicia el ID del estudiante a 0 para indicar que no se está editando un estudiante existente
             image.Image = _imagBitmap; // Asigna la imagen por defecto al PictureBox
-            //Aqui vamos a limpiar los campos de texto cuando le demos al boton de agragar//
-            listaLabel[0].Text = "NiD";
-            listaLabel[1].Text = "Nombre";
-            listaLabel[2].Text = "Apellidos";
-            listaLabel[3].Text = "Email";
+
             //Aqui vamos agregar colores a los labels cuando limpiemos los campos//
             listaLabel[0].ForeColor = Color.LightSlateGray;
             listaLabel[1].ForeColor = Color.LightSlateGray;
             listaLabel[2].ForeColor = Color.LightSlateGray;
             listaLabel[3].ForeColor = Color.LightSlateGray;
+            //Aqui vamos a limpiar los campos de texto cuando le demos al boton de agragar//
+            listaLabel[0].Text = "NiD";
+            listaLabel[1].Text = "Nombre";
+            listaLabel[2].Text = "Apellidos";
+            listaLabel[3].Text = "Email";
             //Limpiamos los campos de texto//
             textBoxes[0].Text = "";
             textBoxes[1].Text = "";
@@ -231,9 +313,12 @@ namespace Logica
             listaestudiante = db.GetTable<estudiantes>().ToList();
             if (0 < listaestudiante.Count)
             {
-                _paginador = new Paginador<estudiantes>(listaestudiante, 
+                _paginador = new Paginador<estudiantes>
+                    (
+                    listaestudiante, 
                     listaLabel[4],
-                    _reg_por_pagina);// Aquí estamos creando una nueva instancia de Paginador con la lista de estudiantes, la etiqueta para mostrar la paginación y el número de registros por página
+                    _reg_por_pagina
+                    );// Aquí estamos creando una nueva instancia de Paginador con la lista de estudiantes, la etiqueta para mostrar la paginación y el número de registros por página
             }
             //Aqui estamos llamado el  DataGridView y limpiado tambien//
             BuscarEstudiante(""); // Llama al método BuscarEtudiante con un campo vacío para mostrar todos los estudiantes en el DataGridView

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,13 @@ namespace Logica.Library
         { 
             var convertir = new ImageConverter();// Creamos una instancia de la clase ImageConverter
             return (byte[])convertir.ConvertTo(img, typeof(byte[])); // Convertimos la imagen a un arreglo de bytes y lo retornamos
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)// Este metodo lo que hace es convertir un arreglo de bytes a una imagen//
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn); // Creamos un MemoryStream a partir del arreglo de bytes
+            Image returnImage = Image.FromStream(ms); // Creamos una imagen a partir del MemoryStream
+            return returnImage; // Retornamos la imagen creada
         }
     }
 }

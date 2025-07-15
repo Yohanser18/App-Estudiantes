@@ -149,5 +149,31 @@ namespace App_Estudiantes
         {
             estudiantes.Registro_Paginas();// Aqui estamos llamando el metodo que nos va a cambiar el numero de registro por pagina//
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)// Este evento del DataGridView para manejar el clic en una celda
+        {
+            if (dataGridView1.Rows.Count != 0 )// Aqui estamos diciendo que si el datagridview contiene datos entra la condicion//
+            {
+                estudiantes.GetEstudiante();
+            }
+        }
+
+        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)// Este evento del DataGridView para manejar la tecla liberada//
+        {
+            if (dataGridView1.Rows.Count != 0)// Aqui estamos diciendo que si el datagridview contiene datos entra la condicion//
+            {
+                estudiantes.GetEstudiante();
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)// este metodo es para cancelar cual quier accion que se este realizando en el formulario//
+        {
+            estudiantes.LimpiarCampos();// Aqui llamos al metodo que nos limpia los campos del formulario y los labels de validacion//
+        }
+
+        private void button1_Click(object sender, EventArgs e)//Aqui estaremos haciendo la accion de eliminar //
+        {
+            estudiantes.Eliminar();// Aqui estamos llamando al metodo que nos elimina el registro del estudiante seleccionado en el DataGridView//
+        }
     }
 }
